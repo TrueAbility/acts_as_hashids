@@ -15,6 +15,17 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/dtaniwaki/acts_as_hashids'
   spec.license       = 'MIT'
 
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  # put this in local gem server
+  if spec.respond_to?(:metadata)
+    spec.metadata["allowed_push_host"] = "https://truebadors:ajfdj09tu90oikcvx@gems.dustyjones.com"
+  else
+    raise "RubyGems 2.0 or newer is required to protect against " \
+      "public gem pushes."
+  end
+
+
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
